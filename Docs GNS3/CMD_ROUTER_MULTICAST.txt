@@ -1,0 +1,12 @@
+>> R1 e R2
+
+enable
+conf t
+ip multicast-routing
+interface Ethernet0/0
+ip pim sparse-dense-mode
+exit
+interface FastEthernet1/0
+ip pim sparse-dense-mode
+end
+copy running-config startup-config

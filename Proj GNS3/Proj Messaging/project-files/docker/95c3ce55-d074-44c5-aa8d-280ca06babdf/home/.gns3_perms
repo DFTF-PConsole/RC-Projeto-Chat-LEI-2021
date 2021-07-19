@@ -1,0 +1,12 @@
+664:1000:1001:/home/global.c
+644:0:0:/home/global.o
+664:1000:1001:/home/header_global.h
+664:1000:1001:/home/makefile
+644:0:0:/home/.gns3_perms
+664:1000:1001:/home/servidor.c
+664:1000:1001:/home/header_servidor.h
+644:0:0:/home/baseDados
+664:1000:1001:/home/header_comum.h
+755:0:0:/home/servidor.out
+644:0:0:/home/servidor.o
+777:0:0:/home

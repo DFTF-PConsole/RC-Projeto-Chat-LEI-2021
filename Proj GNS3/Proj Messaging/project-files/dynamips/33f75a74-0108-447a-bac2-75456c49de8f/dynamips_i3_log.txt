@@ -1,0 +1,19 @@
+May 25 06:24:33.801 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+May 25 06:24:33.801 HYPERVISOR: Started on IP = localhost, TCP port = 48107.
+May 25 06:24:33.813 HYPERVISOR: exec_cmd: hypervisor version 
+May 25 06:24:33.813 HYPERVISOR: exec_cmd: hypervisor working_dir /home/user/Desktop/RC/RC-Projeto-2021/Meta 2/Proj GNS3/Proj Messaging/project-files/dynamips 
+May 25 06:24:33.813 GENERAL: working_dir=/home/user/Desktop/RC/RC-Projeto-2021/Meta 2/Proj GNS3/Proj Messaging/project-files/dynamips
+May 25 06:24:33.813 HYPERVISOR: exec_cmd: ethsw create SW3 
+May 25 06:24:37.152 HYPERVISOR: exec_cmd: nio create_udp udp-fbce1004-5e8f-4e33-9d29-ab787e527474 10005 127.0.0.1 10004 
+May 25 06:24:37.152 HYPERVISOR: exec_cmd: ethsw add_nio SW3 udp-fbce1004-5e8f-4e33-9d29-ab787e527474 
+May 25 06:24:37.155 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-fbce1004-5e8f-4e33-9d29-ab787e527474 1 
+May 25 06:24:37.181 HYPERVISOR: exec_cmd: nio create_udp udp-c7fc5d6c-b0d6-40f0-b810-cf316a7a3c59 10006 127.0.0.1 10007 
+May 25 06:24:37.181 HYPERVISOR: exec_cmd: ethsw add_nio SW3 udp-c7fc5d6c-b0d6-40f0-b810-cf316a7a3c59 
+May 25 06:24:37.196 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-c7fc5d6c-b0d6-40f0-b810-cf316a7a3c59 1 
+May 25 06:24:38.113 HYPERVISOR: exec_cmd: nio create_udp udp-6e68b30b-674b-4aa0-80d9-045a754f4fe3 10029 127.0.0.1 10028 
+May 25 06:24:38.114 HYPERVISOR: exec_cmd: ethsw add_nio SW3 udp-6e68b30b-674b-4aa0-80d9-045a754f4fe3 
+May 25 06:24:38.133 HYPERVISOR: exec_cmd: ethsw set_access_port SW3 udp-6e68b30b-674b-4aa0-80d9-045a754f4fe3 1 
+May 25 06:29:22.441 HYPERVISOR: exec_cmd: ethsw delete SW3 
+May 25 06:29:22.494 HYPERVISOR: exec_cmd: hypervisor stop 
+May 25 06:29:22.959 HYPERVISOR: Stopped.
+May 25 06:29:22.959 GENERAL: reset done.

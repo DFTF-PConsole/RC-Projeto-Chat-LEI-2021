@@ -1,0 +1,29 @@
+cd OneDrive/Documentos/GitHub/RC-Projeto-2021/Meta\ 2/Codigo/
+
+make
+
+./servidor.out 6789 9876 baseDados
+
+./cliente.out 193.136.212.129 6789
+
+// config-admin (netcat)
+nc -v 193.136.212.129 9876
+
+
+
+// CMDs CONFIG
+LIST
+
+ADD alice 193.136.212.137 pass123 yes no yes
+ADD bob 193.136.212.138 password123 no no yes
+ADD carol 193.136.212.145 12345 no yes no
+ADD chuck 193.136.212.147 pass yes yes yes
+
+DEL alice
+DEL bob
+DEL carol
+DEL chuck
+
+QUIT
+
+

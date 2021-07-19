@@ -1,0 +1,11 @@
+664:1000:1001:/home/cliente.c
+664:1000:1001:/home/global.c
+644:0:0:/home/global.o
+664:1000:1001:/home/header_global.h
+664:1000:1001:/home/makefile
+644:0:0:/home/cliente.o
+664:1000:1001:/home/header_cliente.h
+644:0:0:/home/.gns3_perms
+664:1000:1001:/home/header_comum.h
+755:0:0:/home/cliente.out
+777:0:0:/home

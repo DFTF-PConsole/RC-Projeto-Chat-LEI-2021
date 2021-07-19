@@ -1,0 +1,53 @@
+
+Rede Base:
+193.136.212.128/25
+
+Lista Sub-Redes /29:
+193.136.212.128/29
+193.136.212.136/29
+193.136.212.144/29
+193.136.212.152/29
+193.136.212.160/29
+...
+
+Precisamos 1 rede /29 obrigatoriamente e mais 2 sub-redes
+
+193.136.212.128/29
+193.136.212.136/29
+193.136.212.144/29
+
+
+
+
+***********
+*CONCLUSAO*
+***********
+
+ ***** Rede: 193.136.212.128/25 *****
+Sub-Rede (/29) >>> NetMask Address: 255.255.255.248    [1111 1111 . 1111 1111 . 1111 1111 . 1(111 1)000]
+                                                                                             |--X--||Hosts|
+
+Sub-Rede (X=0000) >>> Rede (Network Address): 193.136.212.128/29    [1111 1111 . 1111 1111 . 1111 1111 . 1(000 0)000]
+Sub-Rede (X=0001) >>> Rede (Network Address): 193.136.212.136/29    [1111 1111 . 1111 1111 . 1111 1111 . 1(000 1)000]
+Sub-Rede (X=0010) >>> Rede (Network Address): 193.136.212.144/29    [1111 1111 . 1111 1111 . 1111 1111 . 1(001 0)000]
+
+
+
+ * Sub-Rede 1 (X=0000)
+Rede (Network Address): 193.136.212.128
+Gama: 193.136.212.129 a 193.136.212.134      ( 2^3 = 8 [-1 -1] = 6 Endereços Disponiveis pra Hosts)
+Brodcast Address: 193.136.212.135
+
+
+ * Sub-Rede 2 (X=0001)
+Rede (Network Address): 193.136.212.136
+Gama: 193.136.212.137 a 193.136.212.142      ( 2^3 = 8 [-1 -1] = 6 Endereços Disponiveis pra Hosts)
+Brodcast Address: 193.136.212.143
+
+
+ * Sub-Rede 3 (X=0010)
+Rede (Network Address): 193.136.212.144
+Gama: 193.136.212.145 a 193.136.212.150      ( 2^3 = 8 [-1 -1] = 6 Endereços Disponiveis pra Hosts)
+Brodcast Address: 1193.136.212.151
+
+

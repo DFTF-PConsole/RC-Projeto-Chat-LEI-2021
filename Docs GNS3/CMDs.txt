@@ -1,0 +1,122 @@
+* * * * * * * * *
+* PROJETO CMDs  *
+* * * * * * * * *
+
+ >>> R1 (Esquerdo)
+enable
+config terminal
+interface Ethernet0/0
+ip address 193.136.212.130 255.255.255.248
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 193.136.212.139 255.255.255.248
+no shutdown
+exit
+ip route 193.136.212.144 255.255.255.248 193.136.212.131
+exit
+copy running-config startup-config
+
+
+
+ >>> R2 (Direito)
+enable
+config terminal
+interface Ethernet0/0
+ip address 193.136.212.131 255.255.255.248
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 193.136.212.146 255.255.255.248
+no shutdown
+exit
+ip route 193.136.212.136 255.255.255.248 193.136.212.130
+exit
+copy running-config startup-config
+
+
+
+ >>> R3 (Centro)
+enable
+config terminal
+access-list 20 permit 10.90.0.0 0.0.0.255
+ip nat inside source list 20 interface Ethernet0/0 overload
+ip nat inside source static tcp 10.90.0.1 9876 193.136.212.129 9876  		! porto aleatorio: 9876
+ip nat inside source static udp 10.90.0.1 6789 193.136.212.129 6789  		! porto aleatorio: 6789
+interface Ethernet0/0
+ip address 193.136.212.129 255.255.255.248
+ip nat outside
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 10.90.0.2 255.255.255.0
+ip nat inside
+no shutdown
+exit
+ip route 193.136.212.144 255.255.255.248 193.136.212.131
+ip route 193.136.212.136 255.255.255.248 193.136.212.130
+exit
+copy running-config startup-config
+
+
+
+ >>> PC-Server (Centro-Cima)
+ifconfig eth0 10.90.0.1 netmask 255.255.255.0 up
+route add default gw 10.90.0.2
+
+# ip 10.90.0.1/24 10.90.0.2
+# save
+
+
+ >>> PC1 (Extremo-Esquerdo)
+ifconfig eth0 193.136.212.137 netmask 255.255.255.248 up
+route add default gw 193.136.212.139
+
+# ip 193.136.212.137/29 193.136.212.139
+# save
+
+
+
+
+ >>> PC2 (Extremo-Esquerdo)
+ifconfig eth0 193.136.212.138 netmask 255.255.255.248 up
+route add default gw 193.136.212.139
+ 
+# ip 193.136.212.138/29 193.136.212.139
+# save
+
+
+
+ >>> PC3 (Extremo-Direito)
+ifconfig eth0 193.136.212.145 netmask 255.255.255.248 up
+route add default gw 193.136.212.146
+ 
+# ip 193.136.212.145/29 193.136.212.146
+# save
+
+
+
+ >>> PC4 (Extremo-Direito)
+ifconfig eth0 193.136.212.147 netmask 255.255.255.248 up
+route add default gw 193.136.212.146
+ 
+# ip 193.136.212.147/29 193.136.212.146
+# save
+
+
+
+##########################################################################
+NOTA: NO FINAL, EM CADA CONSOLA-Router: copy running-config startup-config
+
+ >> Comandos Uteis:
+VPCS:
+# ping <ip>
+# ip <ip_host/mask> <ip_router>
+# save
+# show ip
+
+Router:
+# ip route <destination_network (rede.0 final)> <subnet_mask(rede final)> <default_gateway(endereço interface[lado router] a que me ligo ao router que tem contacto com a rede final)>
+# show ip route
+# show running-config
+# ping <ip>

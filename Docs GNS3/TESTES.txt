@@ -1,0 +1,50 @@
+TESTES PARA S/D NAT
+-------------------
+
+* * * * * * *
+* SERVIDOR  *
+* * * * * * *
+
+# nc -l {porto} 		# Escuta num porto TCP
+# nc -u -l {porto} 		# Escuta num porto UDP
+
+
+nc -l 9876
+
+nc -u -l 6789
+
+
+
+
+* * * * * * * * * *
+* CLIENTES (PCs)  *
+* * * * * * * * * *
+
+# nc -v {IP do servidor} {porto} 		# Ligação TCP ao servidor
+# nc -v -u {IP do servidor} {porto} 		# Comunicação UDP com o servidor
+
+
+nc -v 193.136.212.129 9876
+
+nc -u -v 193.136.212.129 6789
+
+
+
+
+-------------------
+TESTES Ping
+-------------------
+
+R1 -> R2:
+ping 193.136.212.146
+
+R2 -> R1:
+ping 193.136.212.139
+
+R3 -> R1:
+ping 193.136.212.139
+
+R3 -> R2:
+ping 193.136.212.146
+
+
